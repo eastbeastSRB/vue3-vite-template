@@ -1,0 +1,42 @@
+{
+  "root": true, // Indicates that this configuration file is the root ESLint configuration for the project.
+
+  "env": {
+    "browser": true, // Indicates that the code will be running in a browser environment.
+    "es2021": true, // Indicates that the code uses ECMAScript 2021 features.
+    "node": true, // Indicates that the code is compatible with Node.js.
+    "vue/setup-compiler-macros": true // Specifies that Vue compiler macros are set up and available.
+  },
+
+  "extends": [
+    "plugin:vue/vue3-recommended", // Extends the recommended Vue 3 ESLint configuration.
+    "@vue/eslint-config-typescript/recommended", // Extends the recommended TypeScript ESLint configuration for Vue.
+    "@vue/prettier" // Extends ESLint configuration that enforces Prettier formatting.
+  ],
+
+  "parserOptions": {
+    "ecmaVersion": 2021 // Specifies that the code uses ECMAScript 2021 features.
+  },
+
+  "plugins": ["simple-import-sort"], // Specifies that the "simple-import-sort" ESLint plugin is enabled.
+
+  "rules": {
+    // Specifies that Prettier should be enforced with "error" level and with "auto" end-of-line settings.
+    "prettier/prettier": ["error", { "endOfLine": "auto" }],
+
+    // Specifies a rule for handling TypeScript ts-ignore comments with a certain configuration.
+    "@typescript-eslint/ban-ts-comment": [
+      "error",
+      { "ts-ignore": "allow-with-description" }
+    ],
+
+    // Enforces sorting of imports with the "simple-import-sort" rule.
+    "simple-import-sort/imports": "error",
+
+    // Enforces sorting of exports with the "simple-import-sort" rule.
+    "simple-import-sort/exports": "error"
+  },
+
+  // Specifies patterns for files and directories that ESLint should ignore when linting.
+  "ignorePatterns": ["node_modules/", "dist/", "cypress/"]
+}

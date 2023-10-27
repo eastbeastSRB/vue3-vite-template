@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "ESNext", // Compile TypeScript to ECMAScript 2021.
+    "module": "ESNext", // Use ECMAScript Modules for code organization.
+    "lib": ["ESNext", "DOM", "DOM.Iterable"], // Include these libraries for type checking.
+    "skipLibCheck": true, // Skip type checking of declaration files.
+    "esModuleInterop": true, // Enable compatibility with ES modules.
+    "baseUrl": ".", // Set the base directory for resolving non-absolute module names.
+    "moduleResolution": "bundler", // Use "bundler" for module resolution in a bundler environment.
+    "allowImportingTsExtensions": true, // Allow importing TypeScript files without specifying the ".ts" extension.
+    "resolveJsonModule": true, // Enable importing JSON files as modules.
+    "isolatedModules": true, // Ensure each file is a standalone module.
+    "noEmit": true, // Don't emit compiled JavaScript files.
+    "jsx": "preserve", // Preserve JSX for further processing by Vue.
+    "strict": true, // Enable strict TypeScript checks.
+    "noUnusedLocals": true, // Report unused local variables.
+    "noUnusedParameters": true, // Report unused parameters in functions.
+    "noFallthroughCasesInSwitch": true, // Report fallthrough cases in switch statements.
+    "paths": {
+      "@/*": ["src/*"] // Set up path mapping for module resolution.
+    },
+    "types": ["unplugin-icons/types/vue"] // Include types for unplugin-icons.
+    // "useDefineForClassFields": true, // Option to use ECMAScript's "class fields" definition.
+    // "sourceMap": true, // Generate source maps for better debugging.
+  },
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"], // Include these files for compilation and type checking.
+  "references": [{ "path": "./tsconfig.node.json" }] // Reference to another TypeScript configuration file.
+}
